@@ -1,27 +1,26 @@
 DROP DATABASE IF EXISTS bamazon;
-CREATE DATABASE bamazon;
+CREATE DATABASE Bamazon;
+USE Bamazon;
+DROP TABLE IF EXISTS Products;
 
-USE bamazon;
+CREATE TABLE Products (
+  ItemID int(10) NOT NULL AUTO_INCREMENT,
+  ProductName varchar(50) NOT NULL,
+  DepartmentName varchar(50) NOT NULL,
+  StockQuantity int(10) DEFAULT NULL,
+  Price decimal(10,2) NOT NULL,
+  PRIMARY KEY (ItemID)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
-CREATE TABLE products(
-  item_id INT AUTO_INCREMENT NOT NULL,
-  product_name VARCHAR(45) NOT NULL,
-  department_name VARCHAR(45) NOT NULL,
-  price DECIMAL(10,2) NOT NULL,
-  stock_quantity INT(10) NOT NULL,
-  primary key(item_id)
-);
-
-SELECT * FROM products;
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Uncharted 4", "Video Games", 49.95, 150),
-  ("DOOM", "Video Games", 59.99, 200),
-  ("Crate of Spam", "Food and Drink", 24.50, 50),
-  ("Cool Shades", "Apparel", 75.00, 5),
-  ("Worn Denim Jeans", "Apparel", 54.25, 35),
-  ("Survival Towel", "Necessities", 42.42, 42),
-  ("Bill and Ted's Excellent Adventure", "Films", 15.00, 25),
-  ("Mad Max: Fury Road", "Films", 25.50, 57),
-  ("Monopoly", "Board Games", 30.50, 35),
-  ("Yahtzee", "Board Games", 19.95, 23);
+INSERT INTO Products (ItemID, ProductName, DepartmentName, StockQuantity, Price)
+VALUES 	  (1, "The NorthFace Puffer", "Apparel", 50,149),
+				  (2, "InstaPot 6 quart", "Home and Kitchen", 100, 89),
+				  (3, "Victorinox Fibrox 8-inch Chef's Knife", "Home and Kitchen", 50, 43),
+				  (4, "Rayban Aviator", "Apparel", 25, 119),
+				  (5, "Levi's Signature Jeans", "Apparel", 50, 49),
+				  (6, "Adidas Ultraboost", "Shoes", 75, 179),
+				  (7, "Game of Thrones", "Tv Shows", 35, 39),
+				  (8, "Lord of the Rings", "Tv Shows", 45, 39),
+				  (9, "Nike Epic React", "Shoes", 60, 149),
+				  (10,"Ninja 72oz Food Blender", "Home and Kitchen",50,  72);
+                  
